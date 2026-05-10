@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-toggle">
+                <button id="login-toggle" class="toggle-btn active">Login</button>
+                <button id="register-toggle" class="toggle-btn">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="form active">
+                <h2>Welcome Back</h2>
+                <p class="form-subtitle">Please login to your account</p>
+
+                <div class="input-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="login-password" placeholder="Enter your password" required>
+                        <button type="button" class="toggle-password" data-target="login-password">👁️</button>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="submit-btn">Login</button>
+
+                <div class="message" id="login-message"></div>
+            </form>
+
+            <!-- Register Form -->
+            <form id="register-form" class="form">
+                <h2>Create Account</h2>
+                <p class="form-subtitle">Register a new account</p>
+
+                <div class="input-group">
+                    <label for="register-name">Full Name</label>
+                    <input type="text" id="register-name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="register-password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="register-password" placeholder="Create a password" required minlength="6">
+                        <button type="button" class="toggle-password" data-target="register-password">👁️</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="register-confirm">Confirm Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="register-confirm" placeholder="Confirm your password" required minlength="6">
+                        <button type="button" class="toggle-password" data-target="register-confirm">👁️</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Register</button>
+
+                <div class="message" id="register-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard (shown after login) -->
+    <div class="dashboard" id="dashboard" style="display: none;">
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <h2>Dashboard</h2>
+                <button id="logout-btn" class="logout-btn">Logout</button>
+            </div>
+            <div class="dashboard-content">
+                <div class="welcome-card">
+                    <h3>Welcome, <span id="user-name"></span>!</h3>
+                    <p>You have successfully logged in.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Account Information</h4>
+                    <p><strong>Email:</strong> <span id="user-email"></span></p>
+                    <p><strong>Member since:</strong> <span id="user-date"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
